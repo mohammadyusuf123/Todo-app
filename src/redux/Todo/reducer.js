@@ -1,5 +1,5 @@
 import initialState from './initialState'
-import{ADDED,ALLCOMPLETE,COLORSELECTED,CLEARCOMPLETED,DELETED,TOGGLED} from'../Todo/ActionsTypes'
+import{LOADED,ADDED,ALLCOMPLETE,COLORSELECTED,CLEARCOMPLETED,DELETED,TOGGLED} from'../Todo/ActionsTypes'
 
 
 
@@ -13,6 +13,9 @@ return maxId+1
 export const reducer=(state=initialState,actions)=>{
 
    switch (actions.type) {
+    case LOADED:
+        return actions.payload
+
     case ADDED:
         return[
             ...state,{

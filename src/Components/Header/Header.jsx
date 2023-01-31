@@ -5,6 +5,7 @@ import plus from '../../assets/images/plus.png'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import{added,allCompleted, clearCompleted} from '../../redux/Todo/actions'
+import {addTodo} from '../../redux/Todo/thunk/addTodo'
 
 const Header = () => {
     const [input,setInput]=useState()
@@ -14,7 +15,7 @@ const Header = () => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault()
-        dispatch(added(input))
+        dispatch(addTodo(input))
         setInput(" ")
     }
     const handleCompleted=()=>{
